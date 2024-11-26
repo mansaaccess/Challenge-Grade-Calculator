@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grade Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f9;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    .container {
+      background: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      padding: 20px 30px;
+      width: 300px;
+      text-align: center;
+    }
+    input[type="number"] {
+      padding: 10px;
+      width: 100%;
+      margin: 15px 0;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1em;
+    }
+    button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    #result {
+      margin-top: 15px;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #007bff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Grade Calculator</h2>
+    <input id="marks" type="number" placeholder="Enter your marks">
+    <button onclick="calculateGrade()">Calculate Grade</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function calculateGrade() {
+      var marks = document.getElementById("marks").value;
+      var grade;
+      if (marks >= 70 && marks <= 100) {
+        grade = "A";
+      } else if (marks >= 50 && marks < 70) {
+        grade = "C";
+      } else if (marks >= 0 && marks < 50) {
+        grade = "F";
+      } else {
+        grade = "Invalid Marks";
+      }
+      document.getElementById("result").innerHTML = "Your grade is: " + grade;
+    }
+  </script>
+</body>
+</html>
